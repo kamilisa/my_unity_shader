@@ -1,4 +1,4 @@
-﻿Shader "Hidden/K18_post_shader"
+﻿Shader "kerry/K18_post_shader"
 {
     Properties
     {
