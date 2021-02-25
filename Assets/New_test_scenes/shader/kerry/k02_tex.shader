@@ -1,6 +1,6 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
-Shader "kerry/texturing" {
+Shader "kerry/k02_texturing" {
     Properties{
         _float_a("float",float) = 0.0
         _range_a("slider",range(0.0,99.0)) = 0.0
