@@ -1,5 +1,7 @@
 ﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
+//just little test
+
 Shader "kerry/k02_texturing" {
     Properties{
         _float_a("float",float) = 0.0
