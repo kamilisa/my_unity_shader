@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: k21_ase_diamond_mat
-  m_Shader: {fileID: 4800000, guid: c66a150dcf0cbaa4f80e4e76c9b9422d, type: 3}
+  m_Name: k21_ase_crystal_mat
+  m_Shader: {fileID: 4800000, guid: 9246848dbc2e176418c165652d246394, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,12 +39,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Gap_map:
+        m_Texture: {fileID: 2800000, guid: 7b604225aa92e7642b1ea31ad12520c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Inner_map:
+        m_Texture: {fileID: 2800000, guid: 480f997e79e5cd14b9380f3cbdcc04fb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal_map:
+        m_Texture: {fileID: 2800000, guid: fc4c4b2f95cb8354eb373ef3d4fa96d6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -55,16 +67,8 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _ramp_tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _reflect_map:
-        m_Texture: {fileID: 8900000, guid: e91e80dab3cd5ef4cbba81f26c4c0da8, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _refract_map:
-        m_Texture: {fileID: 8900000, guid: ed20f5d52105f5a4aaaa110c740ec079, type: 3}
+    - _Reflect_Map:
+        m_Texture: {fileID: 8900000, guid: 0f85885515559e6408ac8bc345ccf5b6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -83,17 +87,19 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Reflect_radius: 1.57
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
+    - _UV_distort: 0.13
     - _ZWrite: 1
-    - _fresnel_bias: 1.74
-    - _fresnel_pow: 2.01
-    - _fresnel_scale: 4.53
-    - _refractIntensity: 1
+    - __dirty: 0
+    - _fresnel_pow: 2.13
+    - _fresnel_scale: 1
+    - _normal_Scale: 0.52
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_A: {r: 1, g: 0.9265997, b: 0.6745283, a: 0}
-    - _Color_B: {r: 0.3349057, g: 0.4481655, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Rim_Color: {r: 1, g: 0.36320752, b: 0.36320752, a: 0}
+    - _Tilling_offset: {r: 1.09, g: 0.58, b: 0.45, a: 0.43}
