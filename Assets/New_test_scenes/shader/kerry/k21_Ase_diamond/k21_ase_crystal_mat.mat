@@ -10,7 +10,7 @@ Material:
   m_Name: k21_ase_crystal_mat
   m_Shader: {fileID: 4800000, guid: 9246848dbc2e176418c165652d246394, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -87,19 +87,21 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Reflect_radius: 1.57
+    - _Reflect_radius: 1
+    - _Reflect_scale: 0.52
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _UV_distort: 0.13
+    - _UV_distort: 0.11
     - _ZWrite: 1
     - __dirty: 0
-    - _fresnel_pow: 2.13
-    - _fresnel_scale: 1
+    - _fresnel_pow: 2.56
+    - _fresnel_scale: 0.39
     - _normal_Scale: 0.52
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Rim_Color: {r: 1, g: 0.36320752, b: 0.36320752, a: 0}
+    - _Fresnel_Color: {r: 0.6037736, g: 0.33321467, b: 0.49616048, a: 0}
+    - _Rim_Color: {r: 0.27198458, g: 0, b: 1, a: 0}
     - _Tilling_offset: {r: 1.09, g: 0.58, b: 0.45, a: 0.43}
