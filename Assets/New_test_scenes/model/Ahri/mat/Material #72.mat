@@ -55,12 +55,20 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ramp_tex:
+        m_Texture: {fileID: 2800000, guid: e5b88b78aca2f93448fc279a33d5e99d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _reflect_map:
         m_Texture: {fileID: 8900000, guid: e91e80dab3cd5ef4cbba81f26c4c0da8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _refract_map:
         m_Texture: {fileID: 8900000, guid: ed20f5d52105f5a4aaaa110c740ec079, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -81,7 +89,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     - _fresnel_pow: 0
-    - _fresnel_scale: 1.76
+    - _fresnel_scale: 1.16
     - _refractIntensity: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
