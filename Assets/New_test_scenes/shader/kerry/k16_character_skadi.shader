@@ -44,7 +44,7 @@ Shader "kerry/k16_character_skadi"
             #include "UnityCG.cginc"
             //导入光照相关方法头文件
             #include "AutoLight.cginc"
-            #include "/Assets/kami_lib.cginc"
+            #include "kami_utility.cginc"
             
             struct appdata
             {
