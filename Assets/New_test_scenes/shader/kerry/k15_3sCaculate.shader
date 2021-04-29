@@ -28,7 +28,7 @@
             #pragma multi_compile_fwdbase
             #include "UnityCG.cginc"
             #include "AutoLight.cginc"
-            #include "/Assets/kami_lib.cginc"
+            #include "kami_utility.cginc"
 
             struct appdata
             {

@@ -20,7 +20,7 @@
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
-            #include "/Assets/kami_lib.cginc"
+            #include "kami_utility.cginc"
 
             struct appdata
             {

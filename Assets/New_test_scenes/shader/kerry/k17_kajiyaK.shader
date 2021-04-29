@@ -35,7 +35,7 @@
             #pragma shader_feature _FLOWMAP_ON
             #include "UnityCG.cginc"
             #include "AutoLight.cginc"
-            #include "/Assets/kami_lib.cginc"
+            #include "kami_utility.cginc"
             
 
             struct appdata
@@ -118,21 +118,21 @@
                 half half_lambert = max(0,(NdotL + 1) * 0.5);  //半兰伯特
                 half NdotV = max(0,dot(normal_Dir,view_Dir));  //菲涅尔
 
-                // //Kajiya K 各向异性 or 称呼其为直接光镜面反射层
-                // //扰动
-                // shift_map = (shift_map * 2.0 - 1.0) * _SpecNoise; //采一张图以便于后续直接作为控制法线扰动强度的乘值
-                // half3 binormal_offset = normal_Dir * (shift_map + _SpecOffset); //给法线偏转程度通过一张贴图叠加强度值
-                // binormal_Dir = normalize(binormal_Dir + binormal_offset); //将次法线通过法线向量给予一个扰动
-                // half BdotH = dot(binormal_Dir,half_Dir); //B dot H 点积结果
-                // half sinH =  max(0,sqrt(1 - BdotH * BdotH));  // kajiya-K核心公式
-                // half3 spec_color = pow(sinH,_SpecRoughness) * _LightColor0.xyz * _SoecColor;
-                // half3 spec_layer = spec_color;
+                //Kajiya K 各向异性 or 称呼其为直接光镜面反射层
+                //扰动
+                shift_map = (shift_map * 2.0 - 1.0) * _SpecNoise; //采一张图以便于后续直接作为控制法线扰动强度的乘值
+                half3 binormal_offset = normal_Dir * (shift_map + _SpecOffset); //给法线偏转程度通过一张贴图叠加强度值
+                binormal_Dir = normalize(binormal_Dir + binormal_offset); //将次法线通过法线向量给予一个扰动
+                half BdotH = dot(binormal_Dir,half_Dir); //B dot H 点积结果
+                half sinH =  max(0,sqrt(1 - BdotH * BdotH));  // kajiya-K核心公式
+                half3 spec_color = pow(sinH,_SpecRoughness) * _LightColor0.xyz * _SpecColor;
+                half3 spec_layer = spec_color;
 
-                //special 各向异性 or 称呼其为直接光镜面反射层
-                half3 spec_aniso = SpecialAnisotropicLight(_SpecNoise,_SpecOffset,_SpecRoughness,shift_map,tangent_Dir,binormal_Dir,normal_Dir,half_Dir);  //新的各向异性公式，据说比KK好
-                half3 spec_color = _SpecColor.rgb;
-                half aniso_atten = saturate(sqrt(max(0,half_lambert / NdotV))) * atte; //特殊阴影衰减，控制高光在阴影区间衰减
-                half3 spec_layer = spec_aniso * aniso_atten * spec_color * _LightColor0.xyz;
+                // //special 各向异性 or 称呼其为直接光镜面反射层
+                // half3 spec_aniso = SpecialAnisotropicLight(_SpecNoise,_SpecOffset,_SpecRoughness,shift_map,tangent_Dir,binormal_Dir,normal_Dir,half_Dir);  //新的各向异性公式，据说比KK好
+                // half3 spec_color = _SpecColor.rgb;
+                // half aniso_atten = saturate(sqrt(max(0,half_lambert / NdotV))) * atte; //特殊阴影衰减，控制高光在阴影区间衰减
+                // half3 spec_layer = spec_aniso * aniso_atten * spec_color * _LightColor0.xyz;
 
                 //直接光漫反射
                 half3 dif_layer = dif_color * _MainColor * _LightColor0.xyz * atte;

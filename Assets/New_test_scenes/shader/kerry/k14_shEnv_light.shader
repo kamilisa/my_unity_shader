@@ -24,7 +24,7 @@
             //导入光照相关方法头文件
             #include "AutoLight.cginc"
             #include "UnityCG.cginc"
-            #include "/Assets/kami_lib.cginc"
+            #include "kami_utility.cginc"
 
             struct appdata
             {
