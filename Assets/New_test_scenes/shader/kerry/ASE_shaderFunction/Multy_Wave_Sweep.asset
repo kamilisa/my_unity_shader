@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: Multy_Wave_Sweep
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18900\n448;395;1920;959;2553.578;743.516;1.709784;True;True\nNode;AmplifyShaderEditor.CommentaryNode;1;-1891.781,-538.053;Inherit;False;2579.39;811.2578;Wave
+    Vertex Animation ;21;24;17;15;13;27;26;25;6;4;23;0;19;18;14;12;11;10;9;8;28;29;Wave
+    Vertex Animation ;1,1,1,1;0;0\nNode;AmplifyShaderEditor.FunctionInput;28;-979.1911,-91.84348;Inherit;False;WaveC;4;4;False;1;0;FLOAT4;1,1,2,50;False;1;FLOAT4;0\nNode;AmplifyShaderEditor.CustomExpressionNode;8;-735.8698,-284.3221;Inherit;False;float
+    steepness = wave.z * 0.01@$float wavelength = wave.w@$float k = 2 * UNITY_PI
+    / wavelength@$float c = sqrt(9.8 / k)@$float2 d = normalize(wave.xy)@$float f
+    = k * (dot(d, position.xz) - c * _Time.y)@$float a = steepness / k@$\t\t\t$$tangent
+    += float3($-d.x * d.x * (steepness * sin(f)),$d.x * (steepness * cos(f)),$-d.x
+    * d.y * (steepness * sin(f))$)@$$binormal += float3($-d.x * d.y * (steepness
+    * sin(f)),$d.y * (steepness * cos(f)),$-d.y * d.y * (steepness * sin(f))$)@$$return
+    float3($d.x * (a * cos(f)),$a * sin(f),$d.y * (a * cos(f))$)@;3;False;4;True;position;FLOAT3;0,0,0;In;;Inherit;False;True;tangent;FLOAT3;1,0,0;InOut;;Inherit;False;True;binormal;FLOAT3;0,0,1;InOut;;Inherit;False;True;wave;FLOAT4;0,0,0,0;In;;Inherit;False;GerstnerWave;True;False;0;4;0;FLOAT3;0,0,0;False;1;FLOAT3;1,0,0;False;2;FLOAT3;0,0,1;False;3;FLOAT4;0,0,0,0;False;3;FLOAT3;0;FLOAT3;2;FLOAT3;3\nNode;AmplifyShaderEditor.SimpleAddOpNode;9;-480.9833,-467.093;Inherit;False;4;4;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.WorldPosInputsNode;10;-470.1903,-185.5857;Inherit;False;0;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3\nNode;AmplifyShaderEditor.SimpleSubtractOpNode;11;-233.19,-255.5861;Inherit;False;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.SwizzleNode;12;-61.19064,-247.586;Inherit;False;FLOAT;1;1;2;3;1;0;FLOAT3;0,0,0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.ClampOpNode;14;117.1012,-306.1391;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SimpleMultiplyOpNode;19;321.1015,-237.1389;Inherit;False;2;2;0;FLOAT;0;False;1;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.TransformPositionNode;18;-248.306,-466.8;Inherit;False;World;Object;False;Fast;True;1;0;FLOAT3;0,0,0;False;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3\nNode;AmplifyShaderEditor.CustomExpressionNode;6;-1076.202,-259.512;Inherit;False;float
+    steepness = wave.z * 0.01@$float wavelength = wave.w@$float k = 2 * UNITY_PI
+    / wavelength@$float c = sqrt(9.8 / k)@$float2 d = normalize(wave.xy)@$float f
+    = k * (dot(d, position.xz) - c * _Time.y)@$float a = steepness / k@$\t\t\t$$tangent
+    += float3($-d.x * d.x * (steepness * sin(f)),$d.x * (steepness * cos(f)),$-d.x
+    * d.y * (steepness * sin(f))$)@$$binormal += float3($-d.x * d.y * (steepness
+    * sin(f)),$d.y * (steepness * cos(f)),$-d.y * d.y * (steepness * sin(f))$)@$$return
+    float3($d.x * (a * cos(f)),$a * sin(f),$d.y * (a * cos(f))$)@;3;False;4;True;position;FLOAT3;0,0,0;In;;Inherit;False;True;tangent;FLOAT3;1,0,0;InOut;;Inherit;False;True;binormal;FLOAT3;0,0,1;InOut;;Inherit;False;True;wave;FLOAT4;0,0,0,0;In;;Inherit;False;GerstnerWave;True;False;0;4;0;FLOAT3;0,0,0;False;1;FLOAT3;1,0,0;False;2;FLOAT3;0,0,1;False;3;FLOAT4;0,0,0,0;False;3;FLOAT3;0;FLOAT3;2;FLOAT3;3\nNode;AmplifyShaderEditor.FunctionInput;25;108.8455,-163.9681;Inherit;False;WaveColor;5;1;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.FunctionInput;26;-1841.174,-192.1935;Inherit;False;WaveA(SpeedXY,Steepness,wavelength);4;2;False;1;0;FLOAT4;1,1,2,50;False;1;FLOAT4;0\nNode;AmplifyShaderEditor.CrossProductOpNode;13;-469.677,-25.18854;Inherit;False;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.NormalizeNode;15;-270.677,8.81132;Inherit;False;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.TransformDirectionNode;17;-70.67755,-13.18872;Inherit;False;World;Object;False;Fast;False;1;0;FLOAT3;0,0,0;False;4;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3\nNode;AmplifyShaderEditor.FunctionInput;27;-1323.77,-103.6138;Inherit;False;WaveB;4;3;False;1;0;FLOAT4;1,1,2,50;False;1;FLOAT4;0\nNode;AmplifyShaderEditor.CustomExpressionNode;4;-1412.184,-259.6;Inherit;False;float
+    steepness = wave.z * 0.01@$float wavelength = wave.w@$float k = 2 * UNITY_PI
+    / wavelength@$float c = sqrt(9.8 / k)@$float2 d = normalize(wave.xy)@$float f
+    = k * (dot(d, position.xz) - c * _Time.y)@$float a = steepness / k@$\t\t\t$$tangent
+    += float3($-d.x * d.x * (steepness * sin(f)),$d.x * (steepness * cos(f)),$-d.x
+    * d.y * (steepness * sin(f))$)@$$binormal += float3($-d.x * d.y * (steepness
+    * sin(f)),$d.y * (steepness * cos(f)),$-d.y * d.y * (steepness * sin(f))$)@$$return
+    float3($d.x * (a * cos(f)),$a * sin(f),$d.y * (a * cos(f))$)@;3;False;4;True;position;FLOAT3;0,0,0;In;;Inherit;False;True;tangent;FLOAT3;1,0,0;InOut;;Inherit;False;True;binormal;FLOAT3;0,0,1;InOut;;Inherit;False;True;wave;FLOAT4;0,0,0,0;In;;Inherit;False;GerstnerWave;True;False;0;4;0;FLOAT3;0,0,0;False;1;FLOAT3;1,0,0;False;2;FLOAT3;0,0,1;False;3;FLOAT4;0,0,0,0;False;3;FLOAT3;0;FLOAT3;2;FLOAT3;3\nNode;AmplifyShaderEditor.FunctionInput;29;-1702.364,-468.7685;Inherit;False;Position;3;0;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionOutput;23;511.5527,-235.8402;Inherit;False;False;-1;WaveColor;0;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.FunctionOutput;24;223.122,-6.946342;Inherit;False;False;-1;WaveVertexNormal;1;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nNode;AmplifyShaderEditor.FunctionOutput;0;261.6477,-468.5076;Inherit;True;True;-1;WaveVertexPos;2;False;1;0;FLOAT3;0,0,0;False;1;FLOAT3;0\nWireConnection;8;0;29;0\nWireConnection;8;1;6;2\nWireConnection;8;2;6;3\nWireConnection;8;3;28;0\nWireConnection;9;0;29;0\nWireConnection;9;1;4;0\nWireConnection;9;2;6;0\nWireConnection;9;3;8;0\nWireConnection;11;0;9;0\nWireConnection;11;1;10;0\nWireConnection;12;0;11;0\nWireConnection;14;0;12;0\nWireConnection;19;0;14;0\nWireConnection;19;1;25;0\nWireConnection;18;0;9;0\nWireConnection;6;0;29;0\nWireConnection;6;1;4;2\nWireConnection;6;2;4;3\nWireConnection;6;3;27;0\nWireConnection;13;0;8;3\nWireConnection;13;1;8;2\nWireConnection;15;0;13;0\nWireConnection;17;0;15;0\nWireConnection;4;0;29;0\nWireConnection;4;3;26;0\nWireConnection;23;0;19;0\nWireConnection;24;0;17;0\nWireConnection;0;0;18;0\nASEEND*/\n//CHKSM=9EA79A8054F0E0D59C8E43310E0479BEEBEEF419"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_customEdited: 0
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
